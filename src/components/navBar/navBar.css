@@ -1,0 +1,74 @@
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px 40px;
+  font-family: "Courier New", monospace;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.navbar-logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1a1a2e;
+  justify-self: start;
+  text-align: left;
+  width: fit-content;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links .divider {
+  color: #cccccc;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #1a1a2e;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding-bottom: 6px;
+}
+
+.navbar-links li.active a {
+  border-bottom: 2px solid #1a1a2e;
+}
+
+.theme-toggle {
+  justify-self: end;
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #f0f0f0;
+}

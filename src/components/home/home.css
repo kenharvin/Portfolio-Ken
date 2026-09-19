@@ -1,0 +1,102 @@
+.hero {
+  position: relative;
+  background-color: #1e2749;
+  overflow: hidden;
+  padding: 60px 40px;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  font-family: "Courier New", monospace;
+  scroll-snap-align: start;
+  padding-top: 100px; /* navbar height + breathing room */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.hero-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px 40px 40px 0px;
+  padding: 50px;
+  max-width: 560px;
+  text-align: left;
+}
+
+.hero-label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #b8c1e0;
+}
+
+.hero-name {
+  font-size: 56px;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 16px 0 24px;
+  font-weight: 400;
+  font-family: system-ui, sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  color: #d8dcec;
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.hero-btn {
+  background-color: #2a3a6e;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 32px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #35478a;
+}
+
+.hero-image img {
+  width: 320px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-card {
+    text-align: center;
+    border-radius: 24px;
+  }
+  .hero-name {
+    font-size: 40px;
+  }
+}
