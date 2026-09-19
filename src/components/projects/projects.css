@@ -128,7 +128,29 @@
   letter-spacing: 0.5px;
 }
 
+/* Progresstify-specific sizing (laptop/tablet mockups need to be bigger) */
+.project-section.reverse .project-image-stack {
+  max-width: 1000px;
+  height: 280px;
+}
 
+.project-section.reverse .project-image-stack .project-image:nth-child(1) {
+  width: 65%;
+  left: -5%;
+  top: 15%;
+}
+
+.project-section.reverse .project-image-stack .project-image:nth-child(2) {
+  width: 75%;
+  left: 15%;
+  top: 0;
+}
+
+.project-section.reverse .project-image-stack .project-image:nth-child(3) {
+  width: 65%;
+  left: 40%;
+  top: 18%;
+}
 
 @media (max-width: 900px) {
   .project-content,
