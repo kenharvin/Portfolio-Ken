@@ -2,7 +2,7 @@ import "./home.css";
 
 const Home = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="home">
 
       <div className="hero-content">
         <div className="hero-card">

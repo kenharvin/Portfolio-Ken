@@ -13,7 +13,7 @@ const techStack = [
 
 const About = () => {
   return (
-    <section className="about">
+    <section className="about" id="home">
       <div className="about-content">
         <span className="about-label">ABOUT / WHAT I DO</span>
         <h2 className="about-title">Building Ideas Into Applications</h2>
