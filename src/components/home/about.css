@@ -1,5 +1,5 @@
 .about {
-  background-color: #1e2749;
+  background-color: var(--section-bg-alt);
   height: 100vh;
   box-sizing: border-box;
   padding: 100px 40px;
@@ -20,13 +20,13 @@
 .about-label {
   font-size: 14px;
   letter-spacing: 2px;
-  color: #8fa8f0;
+  color: var(--accent-blue);
   font-weight: 700;
 }
 
 .about-title {
   font-size: 42px;
-  color: #ffffff;
+  color: var(--text-primary);
   font-family: system-ui, sans-serif;
   font-weight: 700;
   margin: 16px 0 24px;
@@ -34,14 +34,14 @@
 
 .about-text {
   font-size: 16px;
-  color: #c3c9e0;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 48px;
 }
 
 .about-subheading {
   font-size: 15px;
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 700;
   font-family: system-ui, sans-serif;
   margin-bottom: 24px;
@@ -55,8 +55,8 @@
 }
 
 .tech-pill {
-  background-color: #3a5bd9;
-  color: #ffffff;
+  background-color: var(--pill-bg);
+  color: var(--text-primary);
   padding: 10px 22px;
   border-radius: 30px;
   font-size: 14px;

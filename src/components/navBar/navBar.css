@@ -2,8 +2,10 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  background-color: #ffffff;
-  padding: 20px 40px;
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  padding: 10px 40px;
+  min-height: 30px;
   font-family: "Courier New", monospace;
   position: fixed;
   top: 0;
@@ -14,13 +16,8 @@
 }
 
 .navbar-logo {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #1a1a2e;
-  justify-self: start;
-  text-align: left;
-  width: fit-content;
+  width: 50px;
+  height: auto;
 }
 
 .navbar-links {
@@ -43,7 +40,7 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: #1a1a2e;
+  color: var(--navbar-text);
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -51,7 +48,7 @@
 }
 
 .navbar-links li.active a {
-  border-bottom: 2px solid #1a1a2e;
+  border-bottom: 2px solid var(--navbar-text);
 }
 
 .theme-toggle {

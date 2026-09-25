@@ -188,3 +188,19 @@
   overflow-y: scroll;
   height: 100vh;
 }
+
+.app {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+
+  /* Hide scrollbar - Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar - IE/Edge */
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar - Chrome, Safari, Opera */
+.app::-webkit-scrollbar {
+  display: none;
+}

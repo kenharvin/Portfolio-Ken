@@ -14,6 +14,21 @@
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
+  --section-bg: #1e2749;
+  --section-bg-alt: #232d54;
+  --text-primary: #ffffff;
+  --text-secondary: #d8dcec;
+  --text-muted: #b8c1e0;
+  --accent-blue: #8fa8f0;
+  --card-bg-start: rgba(255, 255, 255, 0.08);
+  --card-bg-end: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --btn-bg: #2a3a6e;
+  --btn-bg-hover: #35478a;
+  --pill-bg: #3a5bd9;
+  --navbar-bg: #ffffff;
+  --navbar-text: #1a1a2e;
+
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -43,6 +58,21 @@
   --social-bg: rgba(47, 48, 58, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  --section-bg: #0f1424;
+  --section-bg-alt: #141a2e;
+  --text-primary: #f3f4f6;
+  --text-secondary: #c3c9e0;
+  --text-muted: #9ca3af;
+  --accent-blue: #8fa8f0;
+  --card-bg-start: rgba(255, 255, 255, 0.06);
+  --card-bg-end: rgba(255, 255, 255, 0.01);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --btn-bg: #22305c;
+  --btn-bg-hover: #2c3d75;
+  --pill-bg: #33499e;
+  --navbar-bg: #16171d;
+  --navbar-text: #f3f4f6;
+
 }
 
 [data-theme="dark"] #social .button-icon {

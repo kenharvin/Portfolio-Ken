@@ -10,7 +10,7 @@ const Home = () => {
           <h1 className="hero-name">
             Ken Harvin
             <br />
-            Lacacnienta
+            Lacanienta
           </h1>
           <p className="hero-subtitle">
             A BACHELOR OF SCIENCE IN
@@ -21,7 +21,7 @@ const Home = () => {
         </div>
 
         <div className="hero-image">
-          <img src="/profile.jpg" alt="Ken Harvin Lacacnienta" />
+          <img src="/projects/profile.png" alt="Ken Harvin Lacanienta" />
         </div>
       </div>
     </section>

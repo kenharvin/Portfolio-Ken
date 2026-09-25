@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import "./projects.css";
 
 const projectsData = [
@@ -10,7 +11,15 @@ const projectsData = [
       "/projects/fare-system-2.png",
       "/projects/fare-system-3.png",
     ],
-    link: "#",
+    gallery: [
+      "/projects/fare-system-1.png",
+      "/projects/fare-system-2.png",
+      "/projects/fare-system-3.png",
+      "/projects/fare-system-4.png",
+      "/projects/fare-system-5.png",
+      "/projects/fare-system-6.png",
+      "/projects/fare-system-7.png",
+    ],
     reverse: false,
   },
   {
@@ -18,16 +27,68 @@ const projectsData = [
     description:
       "A web-based project management application developed using React and Node.js. The system helps users organize tasks, manage projects, and improve productivity through an intuitive and responsive interface.",
     images: [
+      "/projects/progresstify-preview-1.png",
+      "/projects/progresstify-preview-2.png",
+      "/projects/progresstify-preview-3.png",
+    ],
+    gallery: [
       "/projects/progresstify-1.png",
       "/projects/progresstify-2.png",
       "/projects/progresstify-3.png",
+      "/projects/progresstify-4.png",
     ],
-    link: "#",
     reverse: true,
   },
 ];
 
 const Projects = () => {
+  const [lightbox, setLightbox] = useState(null); // { images: [], index: 0 } | null
+
+  const openLightbox = (images) => {
+    setLightbox({ images, index: 0 });
+  };
+
+  const closeLightbox = () => setLightbox(null);
+
+  const nextImage = useCallback(() => {
+    setLightbox((prev) =>
+      prev ? { ...prev, index: (prev.index + 1) % prev.images.length } : null
+    );
+  }, []);
+
+  const prevImage = useCallback(() => {
+    setLightbox((prev) =>
+      prev
+        ? {
+            ...prev,
+            index: (prev.index - 1 + prev.images.length) % prev.images.length,
+          }
+        : null
+    );
+  }, []);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (!lightbox) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightbox, nextImage, prevImage]);
+
+  // Prevent background scroll while lightbox is open
+  useEffect(() => {
+    document.body.style.overflow = lightbox ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
   return (
     <>
       {projectsData.map((project, index) => (
@@ -51,15 +112,12 @@ const Projects = () => {
                   />
                 ))}
               </div>
-              
-                <a
-                  href={project.link}
-                  className="project-btn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  VIEW PROJECT
-              </a>
+              <button
+                className="project-btn"
+                onClick={() => openLightbox(project.gallery)}
+              >
+                VIEW PROJECT
+              </button>
             </div>
 
             <div className="project-text-col">
@@ -69,6 +127,51 @@ const Projects = () => {
           </div>
         </section>
       ))}
+
+      {lightbox && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <button
+            className="lightbox-close"
+            onClick={closeLightbox}
+            aria-label="Close"
+          >
+            ✕
+          </button>
+
+          <button
+            className="lightbox-nav lightbox-prev"
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={lightbox.images[lightbox.index]}
+              alt={`Slide ${lightbox.index + 1}`}
+              className="lightbox-image"
+            />
+            <div className="lightbox-counter">
+              {lightbox.index + 1} / {lightbox.images.length}
+            </div>
+          </div>
+
+          <button
+            className="lightbox-nav lightbox-next"
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            aria-label="Next image"
+          >
+            ›
+          </button>
+        </div>
+      )}
     </>
   );
 };

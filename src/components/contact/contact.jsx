@@ -108,8 +108,6 @@ const Contact = () => {
 
   return (
     <section className="contact" id="contacts">
-      <div className="contact-blob contact-blob-1"></div>
-      <div className="contact-blob contact-blob-2"></div>
 
       <div className="contact-content">
         <div className="contact-header">

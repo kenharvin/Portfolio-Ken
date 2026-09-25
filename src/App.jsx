@@ -4,6 +4,7 @@ import Home from "./components/home/home.jsx";
 import About from "./components/home/about.jsx";
 import Projects from "./components/projects/projects.jsx";
 import Contact from "./components/contact/contact.jsx";
+import ScrollDots from "./components/scrollDots/scrollDots.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <About />
       <Projects />
       <Contact />
+      <ScrollDots />
     </div>
   );
 }
