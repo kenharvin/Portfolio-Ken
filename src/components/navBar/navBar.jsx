@@ -39,7 +39,9 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <img src="/projects/logo.png" alt="Logo" className="navbar-logo" />
+      <div className="navbar-logo">
+        <img src="/projects/logo.png" alt="Logo"  />
+      </div>
 
       <ul className="navbar-links">
         <li className={activeSection === "home" ? "active" : ""}>
